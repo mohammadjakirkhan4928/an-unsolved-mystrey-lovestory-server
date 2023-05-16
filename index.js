@@ -13,8 +13,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
-const uri =
-  "mongodb+srv://mdjakirkhan4928:JHyTHdpkHUatlH95@ebook.ddq4ksp.mongodb.net/?retryWrites=true&w=majority";
+
+const uri = process.env.MONGODB_URI;
+
+
 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
